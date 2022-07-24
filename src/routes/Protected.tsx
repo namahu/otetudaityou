@@ -18,7 +18,7 @@ const App: Component = () => {
 
 export const protectedRoutes: RouteDefinition[] = [
     {
-        path: "/",
+        path: "/app",
         component: App,
         children: [
             { path: "/calendar", component: Calendar }
