@@ -8,9 +8,6 @@ import { Calendar } from "../feature/calendar";
 const App: Component = () => {
     return (
         <MainLayout>
-            <div>
-                <h1>protected</h1>
-            </div>
             <Outlet />
         </MainLayout>
     );
