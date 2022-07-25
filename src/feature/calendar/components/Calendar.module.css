@@ -1,5 +1,25 @@
 .calendar_container {
     background-color: #fffffb;
+    border-radius: 16px;
     height: 90vh;
     width: 90vw;
+}
+
+.calendar_container thead {
+    height: 64px;
+    font-size: 24px;
+}
+
+.calendar_container tbody {
+    text-align: center;
+}
+
+.calendar_container th:first-child,
+.calendar_container td:first-child {
+    color: red;
+}
+
+.calendar_container th:last-child,
+.calendar_container td:last-child {
+    color: blue;
 }

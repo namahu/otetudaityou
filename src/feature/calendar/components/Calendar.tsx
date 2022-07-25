@@ -4,7 +4,7 @@ import styles from "./Calendar.module.css";
 
 export const Calendar: Component = () => {
     return (
-        <div>
+        <>
             <h1>calendar</h1>
             <table class={styles.calendar_container}>
                 <thead>
@@ -75,6 +75,6 @@ export const Calendar: Component = () => {
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </>
     );
 }

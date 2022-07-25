@@ -7,9 +7,9 @@ import { AppRoutes } from "./routes";
 
 const App: Component = () => {
   return (
-    <div>
+    <>
       <AppRoutes />
-    </div>
+    </>
   );
 };
 
