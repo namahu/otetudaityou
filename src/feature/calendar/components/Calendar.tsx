@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import { createCalendarBody } from "../api/createCalendar";
+import { createCalendarBody } from "../api/createCalendarBody";
 
 import styles from "./Calendar.module.css";
 
