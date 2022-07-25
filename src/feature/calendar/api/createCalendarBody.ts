@@ -7,23 +7,23 @@ export const createCalendarBody = (year: number, month: number) => {
     const firstDayOfWeek = firstDate.getDay();
 
     let countDate = 1;
-    let element = "";
+    let element = [];
 
     for (let row = 0; row < 6; row++) {
-        element += "<tr>";
+        const rowElement = [];
         for (let col = 0; col < 7; col++) {
             if (row === 0 && col < firstDayOfWeek) {
                 // 月の最初の曜日までは空白を表示
-                element += "<td></td>";
+                rowElement.push("");
             } else if (countDate > lastDate) {
                 // 月の最後の日までは空白を表示
-                element += "<td></td>";
+                rowElement.push("");
             } else {
-                element += `<td>${countDate}</td>`;
+                rowElement.push(countDate);
                 countDate++;
             }
         }
-        element += "</tr>";
+        element.push(rowElement);
     }
     return element;
 }
