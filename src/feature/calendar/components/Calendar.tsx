@@ -1,8 +1,11 @@
 import { Component } from "solid-js";
+import { createCalendarBody } from "../api/createCalendar";
 
 import styles from "./Calendar.module.css";
 
 export const Calendar: Component = () => {
+    const calendarBody = createCalendarBody(2022, 7);
+    console.log(calendarBody);
     return (
         <>
             <h1>calendar</h1>
