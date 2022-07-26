@@ -18,10 +18,8 @@ const createCalendarDate = (year: number, month: number) => {
         const rowElement = [];
         for (let col = 0; col < 7; col++) {
             if (row === 0 && col < firstDayOfWeek) {
-                // 月の最初の曜日までは空白を表示
                 rowElement.push("");
             } else if (countDate > lastDate) {
-                // 月の最後の日までは空白を表示
                 rowElement.push("");
             } else {
                 rowElement.push(countDate);
@@ -31,6 +29,10 @@ const createCalendarDate = (year: number, month: number) => {
         element.push(rowElement);
     }
     return element;
+}
+
+const openDateView = (date: number) => {
+    console.log(date);
 }
 
 export const CalendarBody: Component<CalendarBodyProps> = ({
@@ -44,8 +46,13 @@ export const CalendarBody: Component<CalendarBodyProps> = ({
             return (
                 <tr>
                     {row.map((col) => {
+                        if (typeof col !== "number") {
+                            return <td></td>;
+                        }
                         return (
-                            <td>
+                            <td onClick={() => {
+                                openDateView(col);
+                            }}>
                                 {col}
                             </td>
                         );
