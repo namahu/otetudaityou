@@ -1,11 +1,9 @@
 import { Component } from "solid-js";
-import { createCalendarBody } from "../api/createCalendarBody";
 
 import styles from "./Calendar.module.css";
+import { CalendarBody } from "./CalendarBody";
 
 export const Calendar: Component = () => {
-    const calendarBody = createCalendarBody(2022, 7);
-    console.log(calendarBody);
     return (
         <>
             <h1>calendar</h1>
@@ -22,19 +20,7 @@ export const Calendar: Component = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {calendarBody.map((row) => {
-                        return (
-                            <tr>
-                                {row.map((col) => {
-                                    return (
-                                        <td>
-                                            {col}
-                                        </td>
-                                    );
-                                })}
-                            </tr>
-                        );
-                    })}
+                    <CalendarBody year={2022} month={7} />
                 </tbody>
             </table>
         </>

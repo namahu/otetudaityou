@@ -1,6 +1,11 @@
-export const createCalendarBody = (year: number, month: number) => {
-    // 月の最初の曜日と最後の日を求める
+import { Component } from "solid-js";
 
+export type CalendarBodyProps = {
+    year: number;
+    month: number;
+}
+
+const createCalendarDate = (year: number, month: number) => {
     const firstDate = new Date(year, month - 1, 1);
     const lastDate = new Date(year, month, 0).getDate();
 
@@ -26,4 +31,27 @@ export const createCalendarBody = (year: number, month: number) => {
         element.push(rowElement);
     }
     return element;
+}
+
+export const CalendarBody: Component<CalendarBodyProps> = ({
+    year,
+    month
+}) => {
+    const calendarDate = createCalendarDate(year, month);
+
+    return (
+        calendarDate.map((row) => {
+            return (
+                <tr>
+                    {row.map((col) => {
+                        return (
+                            <td>
+                                {col}
+                            </td>
+                        );
+                    })}
+                </tr>
+            );
+        })
+    );
 }
